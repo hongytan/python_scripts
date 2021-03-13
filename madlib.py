@@ -1,7 +1,5 @@
 # Replaces substitute words with inputs from user in madlib.txt
-from pathlib import Path
-
-with open(Path.cwd() / 'file.txt','r') as f:
+with open('file.txt','r') as f:
     fContent = f.read()
     fContentList = fContent.split()
 
