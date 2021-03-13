@@ -21,34 +21,34 @@ capitals = {'Alabama': 'Montgomery', 'Alaska': 'Juneau', 'Arizona': 'Phoenix',
 # Make 35 different quizzes
 for quizNum in range(35):
 
-    # Create header for quiz 
-    with open(f'capitalsquiz{quizNum+1}','w') as quizFile:
-        quizFile.write('Name:\n\nDate:\n\nPeriod:\n\n')
-        quizFile.write(' '*20 + 'States Capital Quiz (Form {quizNum+1})')
-        quizFile.write('\n\n')
+    # Create header for quiz
+    with open(f'capitalsquiz{quizNum+1}.txt','w') as quizFile:
+        with open(f"capitalsquiz_answers{quizNum+1}.txt",'w') as answerKeyFile:
+            quizFile.write('Name:\n\nDate:\n\nPeriod:\n\n')
+            quizFile.write(' '*20 + f'States Capital Quiz (Form {quizNum+1})')
+            quizFile.write('\n\n')
 
-        # Shuffle the states
-        states = list(capitals.keys())
-        random.shuffle(states)
+            # Shuffle the states
+            states = list(capitals.keys())
+            random.shuffle(states)
 
-        # Get right and wrong answers for each state
-        for questionNum in range(50):
-            global correctAnswer 
-            correctAnswer = capitals[states[questionNum]]
-            wrongAnswers = list(capitals.values())
-            del wrongAnswers[wrongAnswers.index(correctAnswer)]
-            wrongAnswers = random.sample(wrongAnswers,3)
-            answerOptions = wrongAnswers + [correctAnswer]
-            random.shuffle(answerOptions)
+            # Get right and wrong answers for each state
+            for questionNum in range(50):
+                global correctAnswer
+                correctAnswer = capitals[states[questionNum]]
+                wrongAnswers = list(capitals.values())
+                del wrongAnswers[wrongAnswers.index(correctAnswer)]
+                wrongAnswers = random.sample(wrongAnswers,3)
+                answerOptions = wrongAnswers + [correctAnswer]
+                random.shuffle(answerOptions)
 
-            quizFile.write(f"What is the capital of {states[questionNum]}?\n")
-            for i in range(4):
-                quizFile.write(f"   {'ABCD'[i]}. {answerOptions[i]}\n")
-            quizFile.write('\n')
+                quizFile.write(f"{questionNum+1}. What is the capital of {states[questionNum]}?\n")
+                for i in range(4):
+                    quizFile.write(f"   {'ABCD'[i]}. {answerOptions[i]}\n")
+                quizFile.write('\n')
 
-    with open(f"capitalquiz_answers{quizNum+1}.txt",'w') as answerKeyFile:
-        answerKeyFile.write(f"{questionNum+1}. {'ABCD'[answerOptions.index(correctAnswer)]}")
-
+                answerKeyFile.write(f"{questionNum+1}. {'ABCD'[answerOptions.index(correctAnswer)]}\n")
 
 
- 
+
+
