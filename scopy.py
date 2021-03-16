@@ -8,8 +8,10 @@ os.mkdir('new_folder')
 for folder, subfolders, filenames in os.walk('.'):
 
     for filename in filenames:
-        if '.txt' in os.path.join(folder,filename):
-            print(shutil.copy(os.path.join(folder,filename),'./new_folder'))
-            #shutil.copy(os.path.join(folder,filename),'./new_folder')
-
-
+        if '.git' in filename:
+            continue
+        if '.txt' in filename:
+            filepath = os.path.join(folder,filename)
+            if os.path.exists('./new_folder/'+filename):
+                continue
+            shutil.copy(filepath,'./new_folder')
