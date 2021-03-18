@@ -1,7 +1,6 @@
 # python3
 # USAGE: python3 websearch.py <keyword>
 # Opens first five search results on imgur.com
-# NOTE: Doesn't work on ubuntu vm, need to fix sys.argv[]
 
 import requests, sys, webbrowser, bs4
 print("Searching...")
