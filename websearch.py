@@ -1,5 +1,5 @@
 # python3
-# USAGE: python3 search.py <keyword>
+# USAGE: python3 websearch.py <keyword>
 # Opens first five search results on imgur.com
 # NOTE: Doesn't work on ubuntu vm, need to fix sys.argv[]
 
