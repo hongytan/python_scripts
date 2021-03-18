@@ -8,7 +8,6 @@ os.makedirs('xkcd',exist_ok=True) # Store comics in ./xkcd
 while not url.endswith('#'):
     
     # Download the page
-    print(f"Downloading page {url}...")
     res = requests.get(url)
     res.raise_for_status()
 
@@ -17,12 +16,11 @@ while not url.endswith('#'):
     # Find the URL of the comic page
     comicElem = soup.select('#comic img')
     if comicElem == []:
-        print("Could not find comic image.")
+        print(f"Could not find comic image on {url}.")
     else:
         comicURL = 'https:' + comicElem[0].get('src')
 
         # Download the image
-        print(f"Download image {comicURL}...")
         res = requests.get(comicURL)
         res.raise_for_status()
 
