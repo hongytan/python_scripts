@@ -2,6 +2,7 @@
 # USAGE: python3 cmdLineEmail.py <email> <message>
 # Use the command line to send a <message> to <email>
 # NOTE: Currently the 'Subject' section is left blank.
+# NOTE: Account is deleted. Program doesn't work with current account.
 
 from selenium import webdriver
 import sys
