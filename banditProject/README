@@ -1,0 +1,11 @@
+This program does OverTheWire bandit0-bandit5 using python. The .cfg files have the username, port, address, and commands to complete each level. None of the files have the password for the corresponding level with the exception of bandit0.cfg. 
+
+How the program works:
+
+1. The script uses the pwntools module. It SSH into the bandit level using information from its corresponding .cfg file and sends the required command to get the levels password.
+
+2. It then gets the password using the recvline() method and stores it in a file called password.txt.
+
+3. The program then SSH into the next level using the information from its corresponding .cfg file along with the password stored in password.txt.
+
+4. It repeats this until bandit5.
