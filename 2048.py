@@ -5,7 +5,7 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 
-PATH_WIN = os.path.join('C:\\Users\\hongt\\Downloads\\chromedriver.exe')
+PATH_WIN = 'C:\\Users\\hongt\\Downloads\\chromedriver.exe'
 browser = webdriver.Chrome(PATH_WIN)
 browser.get('https://gabrielecirulli.github.io/2048/')
 
